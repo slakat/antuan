@@ -1,0 +1,33 @@
+
+%nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
+  %a.navbar-brand{:href => "#"} Antuan
+  %button.navbar-toggler{"aria-controls" => "navbarsExampleDefault", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarsExampleDefault", "data-toggle" => "collapse", :type => "button"}
+    %span.navbar-toggler-icon
+  #navbarsExampleDefault.collapse.navbar-collapse
+    - if user_signed_in?
+      %ul.navbar-nav.mr-auto
+        %li.nav-item.active
+          %a.nav-link{:href => "#"}
+            Encuesta
+            %span.sr-only (current)
+        %li.nav-item
+          %a.nav-link{:href => "/admin/dashboard"} Dashboard
+
+
+      Logged in as
+      = succeed "." do
+        %a{:href => "/admin/users/1"}= current_user.email
+      = link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link'
+      |
+      \#{link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'}
+
+
+    - else
+      = link_to "Sign up", new_user_registration_path, :class => 'navbar-link'
+      |
+      \#{link_to "Login", new_user_session_path, :class => 'navbar-link'}
+/ /.container
+/
+  Bootstrap core JavaScript
+  \==================================================
+/ Placed at the end of the document so the pages load faster
