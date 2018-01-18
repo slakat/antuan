@@ -7,4 +7,32 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    - if notice
+      %p.alert.alert-success= notice
+    - if alert
+      %p.alert.alert-danger= alert
+    #header.header
+      %h1#site_title.site_title Antuan
+      - if user_signed_in?
+        %ul#tabs.header-item.tabs
+          %li#encuesta
+            %a{:href => "/"} Encuesta
+          %li#dashboard
+            %a{:href => "/admin/dashboard"} Dashboard
+        %ul#utility_nav.header-item.tabs
+          %li#current_user
+            Logged in as
+          = succeed "." do
+            %a{:href => "/admin/users/1"}= current_user.email
+          = link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link'
+          |
+          \#{link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'}
+
+
+      - else
+        = link_to "Sign up", new_user_registration_path, :class => 'navbar-link'
+        |
+        \#{link_to "Login", new_user_session_path, :class => 'navbar-link'}
     = yield
+    =# simple_form_for(@user, html: { class: 'form-horizontal' }) do |form|
+

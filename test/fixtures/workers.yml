@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rut: MyString
+  name: MyString
+  gender: MyString
+  local: 1
+  position: MyString
+  woman_apron: MyString
+  man_apron: MyString
+  woman_shirt: MyString
+  man_shirt: MyString
+  polar: MyString
+  dress_trouser: MyString
+  cargo_trouser: MyString
+  t_shirt: MyString
+  answered: false
+
+two:
+  rut: MyString
+  name: MyString
+  gender: MyString
+  local: 1
+  position: MyString
+  woman_apron: MyString
+  man_apron: MyString
+  woman_shirt: MyString
+  man_shirt: MyString
+  polar: MyString
+  dress_trouser: MyString
+  cargo_trouser: MyString
+  t_shirt: MyString
+  answered: false

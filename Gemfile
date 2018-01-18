@@ -63,8 +63,18 @@ gem 'devise'
 #forms
 gem 'simple_form'
 
+#boostrap (style)
 gem 'bootstrap', '~> 4.0.0.alpha3'
 
+#permission level
 gem 'cancan'
 
+#dashboard for admins
 gem 'activeadmin'
+
+#import csv,excel
+gem 'roo'
+
+#validate chilean rut
+gem 'chilean_rut'
+

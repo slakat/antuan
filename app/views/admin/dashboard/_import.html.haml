@@ -1,0 +1,4 @@
+%h2 Import Data
+= form_tag import_workers_path, multipart: true do
+  = file_field_tag :file
+  = submit_tag "Import"
