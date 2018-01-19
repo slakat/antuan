@@ -77,4 +77,3 @@ gem 'roo'
 
 #validate chilean rut
 gem 'chilean_rut'
-

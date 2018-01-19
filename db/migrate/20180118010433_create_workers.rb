@@ -15,6 +15,7 @@ class CreateWorkers < ActiveRecord::Migration[5.1]
       t.string :cargo_trouser
       t.string :t_shirt
       t.boolean :answered, default: false
+      t.text :observation
 
       t.timestamps
     end

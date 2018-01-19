@@ -1,0 +1,12 @@
+wb = xlsx_package.workbook
+
+wb.add_worksheet(name: "Encuestas") do |sheet|
+  # this is the head row of your spreadsheet
+  sheet.add_row %w(RUT SEXO CARGO LOCAL POLAR P_VESTIR CAMISA COTONA BLUSA DELANTAL POLERA P_CARGO RESPONDIDO COMENTARIO ACTUALIZACION )
+
+  # each user is a row on your spreadsheet
+  @workers.each do |w|
+    sheet.add_row [w.rut ,w.gender ,w.position ,w.local ,w.polar ,w.dress_trouser ,w.man_shirt ,w.man_apron ,w.woman_shirt ,w.woman_apron ,w.t_shirt ,w.cargo_trouser ,w.answered ,w.observation ,w.updated_at]
+  end
+end
+

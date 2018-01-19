@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   resources :workers do
     collection do
       post :import
+      post :validate
+      post :survey
+      get  :export
     end
   end
 

@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20180118010433) do
     t.string "cargo_trouser"
     t.string "t_shirt"
     t.boolean "answered", default: false
+    t.text "observation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,0 +1,19 @@
+%br/
+%h1.text-center
+  Hola,
+  =@worker.name
+= simple_form_for @worker, url: survey_workers_path(id: @worker), method: 'post' ,html: {class: 'form-signin'} do |f|
+  %h2.form-signin-heading Ingresa tus datos
+
+  %br/
+  %h6 Selecciona tu local
+  = f.input :local, label:false, input_html: { min: '0'}
+
+  %br/
+  %h6 Indica tu cargo
+
+  = f.collection_radio_buttons :position,@positions, :first, :last do |b|
+    -b.radio_button(:class => "form-check-input") + b.label(:class => "form-check-label")
+
+  %br/
+  = f.submit 'Empezar', class: 'btn btn-lg btn-primary btn-block'

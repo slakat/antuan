@@ -1,11 +1,7 @@
-%form.form-signin
-  %h2.form-signin-heading Please sign in
-  %label.sr-only{:for => "inputEmail"} Email address
-  %input#inputEmail.form-control{:autofocus => "", :placeholder => "Email address", :required => "", :type => "email"}/
-  %label.sr-only{:for => "inputPassword"} Password
-  %input#inputPassword.form-control{:placeholder => "Password", :required => "", :type => "password"}/
-  .checkbox
-    %label
-      %input{:type => "checkbox", :value => "remember-me"}/
-      Remember me
-  %button.btn.btn-lg.btn-primary.btn-block{:type => "submit"} Sign in
+%br/
+%h1.text-center Encuesta de tallaje
+= simple_form_for @worker, url: validate_workers_path, method: 'post' ,html: {class: 'form-signin'} do |f|
+  %h2.form-signin-heading Ingresa tu rut
+  %h6 (ej. 12345678-9)
+  = f.input :rut, label:false
+  = f.submit 'Empezar', class: 'btn btn-lg btn-primary btn-block'
