@@ -74,11 +74,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_export.html.haml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_export.html.haml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/admin/dashboard/_export.html.haml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
               <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="survey.html.haml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/workers/survey.html.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="371">
+              <caret line="71" column="2" lean-forward="false" selection-start-line="71" selection-start-column="2" selection-end-line="71" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -129,7 +139,6 @@
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/home_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/workers/show.html.haml" />
-        <option value="$PROJECT_DIR$/app/views/workers/survey.html.haml" />
         <option value="$PROJECT_DIR$/app/admin/workers.rb" />
         <option value="$PROJECT_DIR$/app/admin/dashboard.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
@@ -142,6 +151,7 @@
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/controllers/workers_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/admin/dashboard/_export.html.haml" />
+        <option value="$PROJECT_DIR$/app/views/workers/survey.html.haml" />
       </list>
     </option>
   </component>
@@ -289,7 +299,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="SearchEverywhereHistoryKey" value="expor&#9;FILE&#9;file:///Users/katherine/Sites/antuan/app/views/admin/dashboard/_export.html.haml&#10;export&#9;FILE&#9;file:///Users/katherine/Sites/antuan/app/views/admin/dashboard/_export.html.haml&#10;gemf&#9;FILE&#9;file:///Users/katherine/Sites/antuan/Gemfile&#10;gemfile&#9;FILE&#9;file:///Users/katherine/Sites/antuan/Gemfile&#10;mime&#9;FILE&#9;file:///Users/katherine/Sites/antuan/config/initializers/mime_types.rb&#10;expo&#9;FILE&#9;file:///Users/katherine/Sites/antuan/app/views/admin/dashboard/_export.html.haml&#10;exp&#9;FILE&#9;file:///Users/katherine/Sites/antuan/app/views/workers/export.xls.erb&#10;active&#9;FILE&#9;file:///Users/katherine/Sites/antuan/config/initializers/active_admin.rb&#10;menu&#9;FILE&#9;file:///Users/katherine/Sites/antuan/app/views/layouts/_menu.html.haml&#10;mime_&#9;FILE&#9;file:///Users/katherine/Sites/antuan/config/initializers/mime_types.rb&#10;routes&#9;FILE&#9;file:///Users/katherine/Sites/antuan/config/routes.rb&#10;act&#9;FILE&#9;file:///Users/katherine/Sites/antuan/config/initializers/active_admin.rb&#10;migra&#9;FILE&#9;file:///Users/katherine/Sites/antuan/db/migrate&#10;applica&#9;FILE&#9;file:///Users/katherine/Sites/antuan/app/views/layouts/application.html.haml&#10;initia&#9;FILE&#9;file:///Users/katherine/Sites/antuan/config/initializers&#10;seed&#9;FILE&#9;file:///Users/katherine/Sites/antuan/db/seeds.rb&#10;gemfi&#9;FILE&#9;file:///Users/katherine/Sites/antuan/Gemfile&#10;gem&#9;FILE&#9;file:///Users/katherine/Sites/antuan/Gemfile&#10;style&#9;FILE&#9;file:///Users/katherine/Sites/antuan/app/assets/stylesheets&#10;work&#9;FILE&#9;file:///Users/katherine/Sites/antuan/app/models/worker.rb&#10;application_con&#9;FILE&#9;file:///Users/katherine/Sites/antuan/app/controllers/application_controller.rb&#10;rout&#9;null&#9;null&#10;database&#9;FILE&#9;file:///Users/katherine/Sites/antuan/config/database.yml&#10;data&#9;ACTION&#9;ActivateDatabaseToolWindow&#10;prod&#9;FILE&#9;file:///Users/katherine/Sites/antuan/config/environments/production.rb&#10;developm&#9;FILE&#9;file:///Users/katherine/Sites/antuan/config/environments/development.rb" />
+    <property name="SearchEverywhereHistoryKey" value="survey&#9;FILE&#9;file:///Users/katherine/Sites/antuan/app/views/workers/survey.html.haml&#10;expor&#9;FILE&#9;file:///Users/katherine/Sites/antuan/app/views/admin/dashboard/_export.html.haml&#10;export&#9;FILE&#9;file:///Users/katherine/Sites/antuan/app/views/admin/dashboard/_export.html.haml&#10;gemf&#9;FILE&#9;file:///Users/katherine/Sites/antuan/Gemfile&#10;gemfile&#9;FILE&#9;file:///Users/katherine/Sites/antuan/Gemfile&#10;mime&#9;FILE&#9;file:///Users/katherine/Sites/antuan/config/initializers/mime_types.rb&#10;expo&#9;FILE&#9;file:///Users/katherine/Sites/antuan/app/views/admin/dashboard/_export.html.haml&#10;exp&#9;FILE&#9;file:///Users/katherine/Sites/antuan/app/views/workers/export.xls.erb&#10;active&#9;FILE&#9;file:///Users/katherine/Sites/antuan/config/initializers/active_admin.rb&#10;menu&#9;FILE&#9;file:///Users/katherine/Sites/antuan/app/views/layouts/_menu.html.haml&#10;mime_&#9;FILE&#9;file:///Users/katherine/Sites/antuan/config/initializers/mime_types.rb&#10;routes&#9;FILE&#9;file:///Users/katherine/Sites/antuan/config/routes.rb&#10;act&#9;FILE&#9;file:///Users/katherine/Sites/antuan/config/initializers/active_admin.rb&#10;migra&#9;FILE&#9;file:///Users/katherine/Sites/antuan/db/migrate&#10;applica&#9;FILE&#9;file:///Users/katherine/Sites/antuan/app/views/layouts/application.html.haml&#10;initia&#9;FILE&#9;file:///Users/katherine/Sites/antuan/config/initializers&#10;seed&#9;FILE&#9;file:///Users/katherine/Sites/antuan/db/seeds.rb&#10;gemfi&#9;FILE&#9;file:///Users/katherine/Sites/antuan/Gemfile&#10;gem&#9;FILE&#9;file:///Users/katherine/Sites/antuan/Gemfile&#10;style&#9;FILE&#9;file:///Users/katherine/Sites/antuan/app/assets/stylesheets&#10;work&#9;FILE&#9;file:///Users/katherine/Sites/antuan/app/models/worker.rb&#10;application_con&#9;FILE&#9;file:///Users/katherine/Sites/antuan/app/controllers/application_controller.rb&#10;rout&#9;null&#9;null&#10;database&#9;FILE&#9;file:///Users/katherine/Sites/antuan/config/database.yml&#10;data&#9;ACTION&#9;ActivateDatabaseToolWindow&#10;prod&#9;FILE&#9;file:///Users/katherine/Sites/antuan/config/environments/production.rb&#10;developm&#9;FILE&#9;file:///Users/katherine/Sites/antuan/config/environments/development.rb" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.ruby.settings.RubyActiveModuleSdkConfigurable" />
     <property name="RailsGeneratorsPopup.hiddenIncluded" value="false" />
   </component>
@@ -466,12 +476,12 @@
       <updated>1516064965809</updated>
       <workItem from="1516064968380" duration="1730000" />
       <workItem from="1516232392811" duration="10222000" />
-      <workItem from="1516280466757" duration="21623000" />
+      <workItem from="1516280466757" duration="21916000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33575000" />
+    <option name="totallyTimeSpent" value="33868000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -495,7 +505,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2696011" sideWeight="0.4983845" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2696011" sideWeight="0.496875" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2696011" sideWeight="0.496875" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -805,14 +815,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/workers/survey.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="71" column="26" lean-forward="false" selection-start-line="71" selection-start-column="26" selection-end-line="71" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/admin/users.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -921,6 +923,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/workers/survey.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="71" column="2" lean-forward="false" selection-start-line="71" selection-start-column="2" selection-end-line="71" selection-end-column="2" />
           <folding />
         </state>
       </provider>
