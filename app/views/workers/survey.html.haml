@@ -17,14 +17,14 @@
   %br/
   %h4 Selecciona talla de Polar
   = f.collection_radio_buttons :polar, @polar_polera, :first, :last do |b|
-    -b.radio_button(:class => "form-check-input") + b.label(:class => "form-check-label")
+    -b.radio_button(:class => "form-check-input",required: true) + b.label(:class => "form-check-label")
 
   //QF, VMF, GS, DERMO, GNC, NATIVA.
   -if [0,1,3,5,6,7].include? @position
     %br/
     %h4 Pantalón de Vestir (Hombre-Mujer) para: QF, VMF, GS, DERMO, GNC, NATIVA.
     = f.collection_radio_buttons :dress_trouser, @t38_60, :first, :last do |b|
-      -b.radio_button(:class => "form-check-input") + b.label(:class => "form-check-label")
+      -b.radio_button(:class => "form-check-input",required: true) + b.label(:class => "form-check-label")
 
   /QF, VMF, G.S.
   -if [0,1,3].include? @position
@@ -32,11 +32,11 @@
     -if @is_woman
       %h4 Blusa Blanca - Mujer, aplica para: QF, VMF, G.S.
       = f.collection_radio_buttons :woman_shirt, @blusa, :first, :last do |b|
-        -b.radio_button(:class => "form-check-input") + b.label(:class => "form-check-label")
+        -b.radio_button(:class => "form-check-input",required: true) + b.label(:class => "form-check-label")
     -else
       %h4 Camisa Blanca-hombre, aplica para: QF, VMF, G.S.
       = f.collection_radio_buttons :man_shirt, @camisa, :first, :last do |b|
-        -b.radio_button(:class => "form-check-input") + b.label(:class => "form-check-label")
+        -b.radio_button(:class => "form-check-input",required: true) + b.label(:class => "form-check-label")
 
 
   /QF, VMF, Consultora Dermo y Belleza w
@@ -44,11 +44,11 @@
     -if  @is_woman
       %h4 Delantal (mujer) aplica para: QF, VMF, Consultora Dermo y Belleza w
       = f.collection_radio_buttons :woman_apron, @t38_60, :first, :last do |b|
-        -b.radio_button(:class => "form-check-input") + b.label(:class => "form-check-label")
+        -b.radio_button(:class => "form-check-input",required: true) + b.label(:class => "form-check-label")
     -else
       %h4 Cotona (hombre) aplica para: QF, VMF, Consultora Dermo y Belleza w
       = f.collection_radio_buttons :man_apron, @t38_60, :first, :last do |b|
-        -b.radio_button(:class => "form-check-input") + b.label(:class => "form-check-label")
+        -b.radio_button(:class => "form-check-input",required: true) + b.label(:class => "form-check-label")
 
 
 
@@ -57,14 +57,14 @@
     %br/
     %h4 Selecciona talla de Pantalón Cargo Azul (Hombre-Mujer) aplica para: SAL
     = f.collection_radio_buttons :cargo_trouser, @t38_60, :first, :last do |b|
-      -b.radio_button(:class => "form-check-input") + b.label(:class => "form-check-label")
+      -b.radio_button(:class => "form-check-input",required: true) + b.label(:class => "form-check-label")
 
   / Polera (Hombre-Mujer) aplica para: SAL, GNC, NATIVA.
   -if [2,6,7].include? @position
     %br/
     %h4 Polera (Hombre-Mujer) aplica para: SAL, GNC, NATIVA.
     = f.collection_radio_buttons :t_shirt, @polar_polera, :first, :last do |b|
-      -b.radio_button(:class => "form-check-input") + b.label(:class => "form-check-label")
+      -b.radio_button(:class => "form-check-input",required: true) + b.label(:class => "form-check-label")
 
 
   %br/

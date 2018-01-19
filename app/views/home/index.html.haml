@@ -3,5 +3,5 @@
 = simple_form_for @worker, url: validate_workers_path, method: 'post' ,html: {class: 'form-signin'} do |f|
   %h2.form-signin-heading Ingresa tu rut
   %h6 (ej. 12345678-9)
-  = f.input :rut, label:false
+  = f.input :rut, label:false,required: true
   = f.submit 'Empezar', class: 'btn btn-lg btn-primary btn-block'

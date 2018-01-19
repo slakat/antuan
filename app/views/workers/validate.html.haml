@@ -7,13 +7,13 @@
 
   %br/
   %h6 Selecciona tu local
-  = f.input :local, label:false, input_html: { min: '0'}
+  = f.input :local, label:false, input_html: { min: '0'},required: true
 
   %br/
   %h6 Indica tu cargo
 
   = f.collection_radio_buttons :position,@positions, :first, :last do |b|
-    -b.radio_button(:class => "form-check-input") + b.label(:class => "form-check-label")
+    -b.radio_button(:class => "form-check-input", required: true) + b.label(:class => "form-check-label")
 
   %br/
   = f.submit 'Empezar', class: 'btn btn-lg btn-primary btn-block'
