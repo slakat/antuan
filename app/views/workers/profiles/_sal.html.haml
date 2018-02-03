@@ -1,0 +1,32 @@
+-if @is_woman
+  %h4 Selecciona talla de Polar Azul (mujer)
+  = f.collection_radio_buttons :w_blue_polar, @polar_polera, :first, :last do |b|
+    -b.radio_button(:class => "form-check-input",required: true) + b.label(:class => "form-check-label")
+
+  %br/
+  %h4 Selecciona talla de Pantalón Cargo Azul (Hombre-Mujer) aplica para: SAL
+  = f.collection_radio_buttons :cargo_trouser, @t38_60, :first, :last do |b|
+    -b.radio_button(:class => "form-check-input",required: true) + b.label(:class => "form-check-label")
+
+  / Polera (Hombre-Mujer) aplica para: SAL, GNC, NATIVA.
+  %br/
+  %h4 Polera (Hombre-Mujer) Gris aplica para: SAL
+  = f.collection_radio_buttons :gray_t_shirt, @polar_polera, :first, :last do |b|
+    -b.radio_button(:class => "form-check-input",required: true) + b.label(:class => "form-check-label")
+
+
+-else
+  %h4 Selecciona talla de Polar azul (hombre)
+  = f.collection_radio_buttons :m_blue_polar, @polar_polera, :first, :last do |b|
+    -b.radio_button(:class => "form-check-input",required: true) + b.label(:class => "form-check-label")
+
+  %br/
+  %h4 Selecciona talla de Pantalón Cargo Azul (Hombre-Mujer) aplica para: SAL
+  = f.collection_radio_buttons :cargo_trouser, @t38_60, :first, :last do |b|
+    -b.radio_button(:class => "form-check-input",required: true) + b.label(:class => "form-check-label")
+
+  / Polera (Hombre-Mujer) aplica para: SAL, GNC, NATIVA.
+  %br/
+  %h4 Polera (Hombre-Mujer)Gris  aplica para: SAL
+  = f.collection_radio_buttons :gray_t_shirt, @polar_polera, :first, :last do |b|
+    -b.radio_button(:class => "form-check-input",required: true) + b.label(:class => "form-check-label")

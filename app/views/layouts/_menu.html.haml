@@ -13,7 +13,7 @@
         %li.nav-item
           %a.nav-link{:href => "/admin/dashboard"} Dashboard
 
-        %div.float-righ
+        %div.log-in
           Logged in as
           = succeed "." do
             %a{:href => "/admin/users/1"}= current_user.email

@@ -2,11 +2,11 @@ wb = xlsx_package.workbook
 
 wb.add_worksheet(name: "Encuestas") do |sheet|
   # this is the head row of your spreadsheet
-  sheet.add_row %w(RUT SEXO CARGO LOCAL POLAR P_VESTIR CAMISA COTONA BLUSA DELANTAL POLERA P_CARGO RESPONDIDO COMENTARIO ACTUALIZACION )
+  sheet.add_row %w(RUT NOMBRE SEXO CARGO LOCAL COTONA_QF DELANTAL_QF COTONA_VENDEDOR DELANTAL_VENDEDOR DELANTAL_DERMO CAMISA BLUSA P_VESTIR_HOMBRE_AZUL P_VESTIR_DAMA_AZUL P_VESTIR_HOMBRE_NEGRO P_VESTIR_DAMA_NEGRO P_VESTIR_DAMA_MORADO P_VESTIR_DAMA_BLCO POLAR_HOMBRE_AZUL POLAR_DAMA_AZUL POLAR_DAMA_MORADO POLAR_HOMBRE_NEGRO POLAR_DAMA_NEGRO P_CARGOAZUL POLERA_ROJA_O_NEGRA POLERA_ROJA_O_NEGRA POLERA_AMARILLA POLERA_GRIS CORBATA_AZUL CORBATA_ROJA RESPONDIDO COMENTARIO ACTUALIZACION )
 
   # each user is a row on your spreadsheet
   @workers.each do |w|
-    sheet.add_row [w.rut ,w.gender ,w.position ,w.local ,w.polar ,w.dress_trouser ,w.man_shirt ,w.man_apron ,w.woman_shirt ,w.woman_apron ,w.t_shirt ,w.cargo_trouser ,w.answered ,w.observation ,w.updated_at]
+    sheet.add_row [w.rut, w.name ,w.gender ,w.position ,w.local, m_qf_apron, w_qf_apron, m_vmf_apron, w_vmf_apron, w_dermo_apron, m_shirt, w_shirt, m_blue_trouser, w_blue_trouser, m_black_trouser, w_black_trouser, w_purple_trouser, w_white_trouser, m_blue_polar, w_blue_polar, w_purple_polar, m_black_polar, w_black_polar, cargo_trouser, red_t_shirt, black_t_shirt, yellow_t_shirt, gray_t_shirt, blue_tie, red_tie ,w.answered ,w.observation ,w.updated_at]
   end
 end
 

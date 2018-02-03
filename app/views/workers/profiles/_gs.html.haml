@@ -1,0 +1,34 @@
+-if @is_woman
+  %h4 Blusa Blanca - Mujer, aplica para: QF, VMF, G.S.
+  = f.collection_radio_buttons :w_shirt, @blusa, :first, :last do |b|
+    -b.radio_button(:class => "form-check-input",required: true) + b.label(:class => "form-check-label")
+  %br/
+  %h4 Pantalón de Vestir Azul (mujer)
+  = f.collection_radio_buttons :w_blue_trouser, @t38_60, :first, :last do |b|
+    -b.radio_button(:class => "form-check-input",required: true) + b.label(:class => "form-check-label")
+  %br/
+  %h4 Selecciona talla de Polar Azul (mujer)
+  = f.collection_radio_buttons :w_blue_polar, @polar_polera, :first, :last do |b|
+    -b.radio_button(:class => "form-check-input",required: true) + b.label(:class => "form-check-label")
+
+  %br/
+  %h4 Automáticamente se agrega Corbata roja (mujer)
+  = f.hidden_field :blue_tie, value:"Azul"
+
+
+-else
+  %h4 Camisa Blanca - Hombre, aplica para: QF, VMF, G.S.
+  = f.collection_radio_buttons :m_shirt, @blusa, :first, :last do |b|
+    -b.radio_button(:class => "form-check-input",required: true) + b.label(:class => "form-check-label")
+  %br/
+  %h4 Pantalón de Vestir azul (Hombre)
+  = f.collection_radio_buttons :m_blue_trouser, @t38_60, :first, :last do |b|
+    -b.radio_button(:class => "form-check-input",required: true) + b.label(:class => "form-check-label")
+  %br/
+  %h4 Selecciona talla de Polar Azul (hombre)
+  = f.collection_radio_buttons :m_blue_polar, @polar_polera, :first, :last do |b|
+    -b.radio_button(:class => "form-check-input",required: true) + b.label(:class => "form-check-label")
+
+  %br/
+  %h4 Automáticamente se agrega Corbata azul (hombre)
+  = f.hidden_field :blue_tie, value:"Azul"

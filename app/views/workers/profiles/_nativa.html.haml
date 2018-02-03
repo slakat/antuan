@@ -1,0 +1,14 @@
+-if @is_woman
+  %h4 Pantalón de Vestir morado (mujer)
+  = f.collection_radio_buttons :w_purple_trouser, @t38_60, :first, :last do |b|
+    -b.radio_button(:class => "form-check-input",required: true) + b.label(:class => "form-check-label")
+  %br/
+  %h4 Selecciona talla de Polar morado (mujer)
+  = f.collection_radio_buttons :w_purple_polar, @polar_polera, :first, :last do |b|
+    -b.radio_button(:class => "form-check-input",required: true) + b.label(:class => "form-check-label")
+
+  / Polera (Hombre-Mujer) aplica para: SAL, GNC, NATIVA.
+  %br/
+  %h4 Polera (Hombre-Mujer) amarilla aplica para: NATIVA.
+  = f.collection_radio_buttons :yellow_t_shirt, @polar_polera, :first, :last do |b|
+    -b.radio_button(:class => "form-check-input",required: true) + b.label(:class => "form-check-label")

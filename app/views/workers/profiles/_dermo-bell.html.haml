@@ -1,0 +1,13 @@
+-if @is_woman
+
+  %h4 Delantal (mujer) aplica para: consultora
+  = f.collection_radio_buttons :w_dermo_apron, @t38_60, :first, :last do |b|
+    -b.radio_button(:class => "form-check-input",required: true) + b.label(:class => "form-check-label")
+  %br/
+  %h4 Pantalón de Vestir blanco (mujer)
+  = f.collection_radio_buttons :w_white_trouser, @t38_60, :first, :last do |b|
+    -b.radio_button(:class => "form-check-input",required: true) + b.label(:class => "form-check-label")
+  %br/
+  %h4 Selecciona talla de Polar Azul (mujer)
+  = f.collection_radio_buttons :w_blue_polar, @polar_polera, :first, :last do |b|
+    -b.radio_button(:class => "form-check-input",required: true) + b.label(:class => "form-check-label")
