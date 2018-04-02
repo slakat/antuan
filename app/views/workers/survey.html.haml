@@ -17,9 +17,9 @@
 = simple_form_for @worker ,html: {class: 'form-signin-survey'} do |f|
   %h2.form-signin-heading Encuesta de Tallaje
 
-  -case @position
-    -when 0
-      =render "workers/profiles/qf", f: f
+  -#case @position
+    -#when 0
+      =#render "workers/profiles/qf", f: f
     -when 1
       =render "workers/profiles/vmf", f: f
     -when 2
@@ -34,6 +34,14 @@
       =render "workers/profiles/gnc", f: f
     -else
       =render "workers/profiles/nativa", f: f
+
+  -@pieces.each do |p|
+    %h4
+      Selecciona
+      =p.name
+    = f.collection_radio_buttons p.nickname, p.sizes, :to_s, :to_s do |b|
+      -b.radio_button(:class => "form-check-input",required: true) + b.label(:class => "form-check-label")
+
 
   %br/
   %h4 ¿Tienes algún comentario?

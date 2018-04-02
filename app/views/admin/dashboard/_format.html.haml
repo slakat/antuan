@@ -1,0 +1,21 @@
+%h2 Importar Cargos
+= form_tag import_roles_path, multipart: true do
+  = file_field_tag :file
+  = submit_tag "Import"
+
+%h2 Importar Prendas
+= form_tag import_pieces_path, multipart: true do
+  = file_field_tag :file
+  = submit_tag "Import"
+
+
+%h2 Importar Tallas
+= form_tag import_sizes_path, multipart: true do
+  = file_field_tag :file
+  = submit_tag "Import"
+
+
+%h3 Codificar
+= form_tag coding_roles_path, multipart: true do
+  = file_field_tag :file
+  = submit_tag "Import"

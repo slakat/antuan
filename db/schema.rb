@@ -29,6 +29,36 @@ ActiveRecord::Schema.define(version: 20180118010433) do
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
   end
 
+  create_table "codes", force: :cascade do |t|
+    t.string "code"
+    t.string "unique"
+    t.text "description"
+    t.bigint "role_id"
+    t.bigint "piece_id"
+    t.bigint "size_id"
+    t.index ["piece_id"], name: "index_codes_on_piece_id"
+    t.index ["role_id"], name: "index_codes_on_role_id"
+    t.index ["size_id"], name: "index_codes_on_size_id"
+  end
+
+  create_table "pieces", force: :cascade do |t|
+    t.string "name"
+    t.string "nickname"
+    t.string "gender"
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.string "name"
+    t.string "nickname"
+    t.string "gender"
+  end
+
+  create_table "sizes", force: :cascade do |t|
+    t.string "name"
+    t.string "position"
+    t.string "detail"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -56,27 +86,32 @@ ActiveRecord::Schema.define(version: 20180118010433) do
     t.string "m_qf_apron"
     t.string "w_vmf_apron"
     t.string "m_vmf_apron"
-    t.string "w_dermo_apron"
     t.string "w_shirt"
     t.string "m_shirt"
     t.string "m_blue_trouser"
     t.string "w_blue_trouser"
     t.string "m_black_trouser"
     t.string "w_black_trouser"
-    t.string "w_purple_trouser"
-    t.string "w_white_trouser"
+    t.string "nativa_trouser"
+    t.string "beauty_trouser"
     t.string "m_blue_polar"
     t.string "w_blue_polar"
-    t.string "w_purple_polar"
+    t.string "nativa_polar"
     t.string "m_black_polar"
     t.string "w_black_polar"
-    t.string "cargo_trouser"
-    t.string "red_t_shirt"
-    t.string "black_t_shirt"
+    t.string "m_red_t_shirt"
+    t.string "w_red_t_shirt"
+    t.string "beauty_jacket"
+    t.string "beauty_polar"
     t.string "yellow_t_shirt"
-    t.string "gray_t_shirt"
     t.string "blue_tie"
     t.string "red_tie"
+    t.string "m_cargo_trouser"
+    t.string "m_gray_t_shirt"
+    t.string "w_cargo_trouser"
+    t.string "w_gray_t_shirt"
+    t.string "m_black_t_shirt"
+    t.string "w_black_t_shirt"
     t.boolean "answered", default: false
     t.text "observation"
     t.datetime "created_at", null: false

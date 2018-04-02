@@ -33,8 +33,11 @@ ActiveAdmin.register_page "Dashboard" do
     #
     columns do
       column do
-           panel "Info" do
+           panel "IMPORTAR TRABAJADORES" do
              render partial: 'import'
+           end
+           panel "IMPORTAR FORMATO" do
+             render partial: 'format'
            end
          end
      end

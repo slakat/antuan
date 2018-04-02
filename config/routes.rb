@@ -14,6 +14,27 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :roles do
+    collection do
+      post :import
+      post :coding
+    end
+  end
+
+  resources :pieces do
+    collection do
+      post :import
+    end
+  end
+
+
+  resources :sizes do
+    collection do
+      post :import
+    end
+  end
+
+
   root to: 'home#index'
 
 end

@@ -50,11 +50,17 @@ class WorkersController < ApplicationController
 
   # POST /workers/1/survey
   def survey
-    @worker.assign_attributes(w_qf_apron: nil, m_qf_apron: nil, w_vmf_apron: nil, m_vmf_apron: nil, w_dermo_apron: nil, w_shirt: nil, m_shirt: nil, m_blue_trouser: nil, w_blue_trouser: nil, m_black_trouser: nil, w_black_trouser: nil, w_purple_trouser: nil, w_white_trouser: nil, m_blue_polar: nil, w_blue_polar: nil, w_purple_polar: nil, m_black_polar: nil, w_black_polar: nil, cargo_trouser: nil, red_t_shirt: nil, black_t_shirt: nil, yellow_t_shirt: nil, gray_t_shirt: nil, blue_tie: nil, red_tie:nil)
+    @worker.assign_attributes(w_qf_apron: nil, m_qf_apron: nil, w_vmf_apron: nil, m_vmf_apron: nil, w_shirt: nil, m_shirt: nil, m_blue_trouser: nil, w_blue_trouser: nil, m_black_trouser: nil, w_black_trouser: nil, nativa_trouser: nil, beauty_trouser: nil, m_blue_polar: nil, w_blue_polar: nil, nativa_polar: nil, m_black_polar: nil, w_black_polar: nil, m_red_t_shirt: nil, w_red_t_shirt: nil, beauty_jacket: nil, beauty_polar: nil, yellow_t_shirt: nil, blue_tie: nil, red_tie: nil, m_cargo_trouser: nil, m_gray_t_shirt: nil, w_cargo_trouser: nil, w_gray_t_shirt: nil, m_black_t_shirt: nil, w_black_t_shirt: nil)
 
     @worker.local = worker_params[:local]
-    @position = worker_params[:position].to_i
-    @worker.position = Worker.key_positions[@position][1]
+    @position = Role.find(worker_params[:position].to_i)
+    #@worker.position = Worker.key_positions[@position][1]
+
+    all_pieces = @position.codes.map(&:piece)
+    pieces_u= all_pieces.map(&:nickname).uniq
+    @pieces= Piece.where(nickname: pieces_u)
+
+
 
     unless @worker.save
       redirect_to validate_workers_path(@worker)
@@ -149,9 +155,14 @@ class WorkersController < ApplicationController
   end
 
   def import
-    Worker.import(params[:file])
 
-    redirect_to root_url, notice: 'Workers imported.'
+    if params[:file]
+      Worker.import(params[:file])
+
+      redirect_to root_url, notice: 'Trabajadores importados.'
+    else
+      redirect_to root_url, alert: 'No se pudo importar'
+    end
   end
 
   private
@@ -162,6 +173,6 @@ class WorkersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def worker_params
-      params.require(:worker).permit(:rut,:position,:local,:w_qf_apron, :m_qf_apron, :w_vmf_apron, :m_vmf_apron, :w_dermo_apron, :w_shirt, :m_shirt, :m_blue_trouser, :w_blue_trouser, :m_black_trouser, :w_black_trouser, :w_purple_trouser, :w_white_trouser, :m_blue_polar, :w_blue_polar, :w_purple_polar, :m_black_polar, :w_black_polar, :cargo_trouser, :red_t_shirt, :black_t_shirt, :yellow_t_shirt, :gray_t_shirt, :blue_tie, :red_tie, :observation)
+      params.require(:worker).permit(:rut,:position,:local,:w_qf_apron, :m_qf_apron, :w_vmf_apron, :m_vmf_apron, :w_shirt, :m_shirt, :m_blue_trouser, :w_blue_trouser, :m_black_trouser, :w_black_trouser, :nativa_trouser, :beauty_trouser, :m_blue_polar, :w_blue_polar, :nativa_polar, :m_black_polar, :w_black_polar, :m_red_t_shirt, :w_red_t_shirt, :beauty_jacket, :beauty_polar, :yellow_t_shirt, :blue_tie, :red_tie, :m_cargo_trouser, :m_gray_t_shirt, :w_cargo_trouser, :w_gray_t_shirt, :m_black_t_shirt, :w_black_t_shirt, :observation)
     end
 end

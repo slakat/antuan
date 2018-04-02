@@ -6,7 +6,7 @@ class Worker < ApplicationRecord
     (2..spreadsheet.last_row).each do |i|
       row = Hash[[header, spreadsheet.row(i)].transpose]
       worker = find_by(rut: row["RUT"]) || new
-      worker.attributes = {rut: row["RUT"], name: row["NOMBRE"], gender: row["SEXO"] }
+      worker.attributes = {rut: row["RUT"], name: row["NOMBRE"], gender: row["SEXO"], local: row["LOCAL"] }
       worker.save!
     end
   end
@@ -21,9 +21,9 @@ class Worker < ApplicationRecord
 
   def self.to_csv(options = {})
 
-      desired_columns = ["rut", "name", "gender", "position","local","m_qf_apron","w_qf_apron","m_vmf_apron","w_vmf_apron","w_dermo_apron","m_shirt","w_shirt","m_blue_trouser","w_blue_trouser","m_black_trouser","w_black_trouser","w_purple_trouser","w_white_trouser","m_blue_polar","w_blue_polar","w_purple_polar","m_black_polar","w_black_polar","cargo_trouser","red_t_shirt","black_t_shirt","yellow_t_shirt","gray_t_shirt","blue_tie","red_tie", "answered", "observation", "updated_at"]
+      desired_columns = ["rut", "name", "gender", "position","local","w_qf_apron","m_qf_apron","w_vmf_apron","m_vmf_apron","w_shirt","m_shirt","m_blue_trouser","w_blue_trouser","m_black_trouser","w_black_trouser","nativa_trouser","beauty_trouser","m_blue_polar","w_blue_polar","nativa_polar","m_black_polar","w_black_polar","m_red_t_shirt","w_red_t_shirt","beauty_jacket","beauty_polar","yellow_t_shirt","blue_tie","red_tie","m_cargo_trouser","m_gray_t_shirt","w_cargo_trouser","w_gray_t_shirt","m_black_t_shirt","w_black_t_shirt", "answered", "observation", "updated_at"]
       CSV.generate(options) do |csv|
-        csv << ["RUT","NOMBRE","SEXO","CARGO","LOCAL","COTONA QF","DELANTAL QF","COTONA VENDEDOR","DELANTAL VENDEDOR","DELANTAL DERMO","CAMISA","BLUSA","P_VESTIR HOMBRE AZUL","P_VESTIR DAMA AZUL","P_VESTIR HOMBRE NEGRO","P_VESTIR DAMA NEGRO","P_VESTIR DAMA MORADO","P_VESTIR DAMA BLCO","POLAR HOMBRE AZUL","POLAR DAMA AZUL","POLAR DAMA MORADO","POLAR HOMBRE NEGRO","POLAR DAMA NEGRO","P_CARGOAZUL","POLERA ROJA O NEGRA","POLERA ROJA O NEGRA","POLERA AMARILLA","POLERA GRIS","CORBATA AZUL","CORBATA ROJA","RESPONDIDO", "COMENTARIO","ACTUALIZACION"]
+        csv << ["RUT","NOMBRE","SEXO","CARGO","LOCAL","DELANTAL QF FASA","COTONA QF FASA","DELANTAL VMF FASA","COTONA VMF FASA","BLUSA BLANCA FASA","CAMISA BLANCA FASA","PANTALON VESTIR AZUL VARON","PANTALON VESTIR AZUL DAMA","PANTALON GNC VARON","PANTALON GNC DAMA","PANTALON NATIVA","PANTALON BELLEZA BLANCO","POLAR AZUL FASA VARON","POLAR AZUL FASA DAMA","POLAR NATIVA","POLAR NEGRO GNC VARON","POLAR NEGRO GNC DAMA","POLERA ROJA VARON GNC","POLERA ROJA DAMA GNC","CHAQUETA BELLEZA BLANCO","POLAR NEGRO MANGA LARGA DER Y BELLEZA","POLERA AMARILLA NATIVA","CORBATA AZUL FASA","CORBATA ROJA FASA","PANTALON CARGO SAL VARON","POLERA GRIS SAL VARON","PANTALON CARGO SAL DAMA","POLERA GRIS SAL DAMA","POLERA NEGRA VARON GNC","POLERA NEGRA DAMA GNC","RESPONDIDO", "COMENTARIO","ACTUALIZACION"]
         all.each do |product|
           csv << product.attributes.values_at(*desired_columns)
         end
@@ -34,7 +34,7 @@ class Worker < ApplicationRecord
     gender.eql?"Mujer"
   end
 
-  def positions
+  def positions_old
     if is_woman?
       [[0,"Químico Farmacéutico"],
        [1,"Vendedor Multifunción"],
@@ -51,6 +51,29 @@ class Worker < ApplicationRecord
      [3,"Guardia de Seguridad"],
      [6,"GNC"]
     ]
+    end
+  end
+
+
+  def positions
+    if is_woman?
+      [[0,"Químico Farmacéutico"],
+       [1,"Vendedor Multifunción"],
+       [2,"Servicio de Apoyo Logístico"],
+       [3,"Guardia de Seguridad"],
+       [4,"Consultora de Belleza"],
+       [5,"Consultora Dermo"],
+       [6,"GNC"],
+       [7,"Nativa"]]
+      Role.where(gender: ["Mujer","Ambos"])
+    else
+      [[0,"Químico Farmacéutico"],
+       [1,"Vendedor Multifunción"],
+       [2,"Servicio de Apoyo Logístico"],
+       [3,"Guardia de Seguridad"],
+       [6,"GNC"]
+      ]
+      Role.where(gender:["Hombre","Ambos"])
     end
   end
 
