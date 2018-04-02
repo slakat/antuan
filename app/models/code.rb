@@ -11,10 +11,7 @@ class Code < ApplicationRecord
       row = Hash[[header, spreadsheet.row(i)].transpose]
       role_id = Role.find_by(nickname:row["UNIFORMES"])
       piece_id = Piece.find_by(name: row["PRENDA"])
-      size_id = nil
-      unless ["red_tie","blue_tie"].include? piece_id.nickname
-        size_id = Size.find_by(detail: row["TALLA"])
-      end
+      size_id = Size.find_by(detail: row["TALLA"])
       code = where(role: role_id.id,piece: piece_id,size:size_id).first || new
       code.attributes = {code: row["CODIGO"],role: role_id,piece: piece_id, size: size_id,description:row["TEXTO"] }
       code.save!
