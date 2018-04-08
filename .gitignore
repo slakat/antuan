@@ -1,4 +1,5 @@
 *.rbc
+*.rbc
 capybara-*.html
 .rspec
 /log
@@ -47,3 +48,6 @@ bower.json
 
 
 .byebug_history
+
+.DS_Store
+.idea
