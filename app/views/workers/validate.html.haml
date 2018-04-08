@@ -16,7 +16,7 @@
   %br/
   %h6 Indica tu cargo
 
-  = f.collection_radio_buttons :position,@positions, :id, :name do |b|
+  = f.collection_radio_buttons :position,@positions, :id, :name, { checked: @role_id } do |b|
     -b.radio_button(:class => "form-check-input", required: true) + b.label(:class => "form-check-label")
 
   %br/

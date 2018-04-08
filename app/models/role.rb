@@ -8,7 +8,7 @@ class Role < ApplicationRecord
     (2..spreadsheet.last_row).each do |i|
       row = Hash[[header, spreadsheet.row(i)].transpose]
       rol = find_by(nickname: row["ADB"]) || new
-      rol.attributes = {name: row["NOMBRE"], nickname: row["ADB"], gender: row["SEXO"] }
+      rol.attributes = {name: row["NOMBRE"], nickname: row["ADB"], gender: row["SEXO"], title: row["TITULO"] }
       rol.save!
     end
   end

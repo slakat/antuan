@@ -43,6 +43,7 @@ class WorkersController < ApplicationController
       if @worker.nil?
         redirect_to root_path, alert: 'El rut ingresado no corresponde a ninguno de los usuarios registrados.'
       end
+      @role_id = @worker.get_role.id
       @positions= @worker.positions
     end
   end
@@ -59,7 +60,7 @@ class WorkersController < ApplicationController
     all_pieces = @position.codes.map(&:piece)
     pieces_u= all_pieces.map(&:nickname).uniq
     @pieces= Piece.where(nickname: pieces_u)
-
+    @worker.position = @position.title
 
 
     unless @worker.save

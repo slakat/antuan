@@ -1,5 +1,9 @@
 %br/
-%h1.text-center Encuesta de tallaje
+%h1.text-center TOMA DE TALLAJE 2018
+
+%div.text-center
+  =image_tag "antuan.jpg", width:300
+  =image_tag "ahumada.jpg", width:200
 = simple_form_for @worker, url: validate_workers_path, method: 'post' ,html: {class: 'form-signin'} do |f|
   %h2.form-signin-heading Ingresa tu rut
   %h6 (ej. 12345678-9)

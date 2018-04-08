@@ -50,12 +50,13 @@ ActiveRecord::Schema.define(version: 20180118010433) do
   create_table "roles", force: :cascade do |t|
     t.string "name"
     t.string "nickname"
+    t.string "title"
     t.string "gender"
   end
 
   create_table "sizes", force: :cascade do |t|
     t.string "name"
-    t.string "position"
+    t.integer "position"
     t.string "detail"
   end
 

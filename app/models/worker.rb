@@ -6,7 +6,14 @@ class Worker < ApplicationRecord
     (2..spreadsheet.last_row).each do |i|
       row = Hash[[header, spreadsheet.row(i)].transpose]
       worker = find_by(rut: row["RUT"]) || new
-      worker.attributes = {rut: row["RUT"], name: row["NOMBRE"], gender: row["SEXO"], local: row["LOCAL"] }
+
+      n = row["NOMBRE"].nil? ? "":row["NOMBRE"]
+      p = row["APATERNO"].nil? ? "":row["APATERNO"]
+      m = row["AMATERNO"].nil?  ? "":row["AMATERNO"]
+
+      nombre = n+" "+p+" "+m
+      sexo = row["SEXO"]=="F" ? "Mujer" : "Hombre"
+      worker.attributes = {rut: row["RUT"], name: nombre, gender: sexo, local: row["LOCAL"], position: row["CARGO"] }
       worker.save!
     end
   end
@@ -29,6 +36,11 @@ class Worker < ApplicationRecord
         end
       end
   end
+
+  def get_role
+    Role.find_by(title: position, gender: gender)
+  end
+
 
   def is_woman?
     gender.eql?"Mujer"

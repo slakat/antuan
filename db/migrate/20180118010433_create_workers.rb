@@ -46,6 +46,7 @@ class CreateWorkers < ActiveRecord::Migration[5.1]
     create_table :roles do |t|
       t.string :name
       t.string :nickname
+      t.string :title
       t.string :gender
 
     end
@@ -57,7 +58,7 @@ class CreateWorkers < ActiveRecord::Migration[5.1]
     end
     create_table :sizes do |t|
       t.string :name
-      t.string :position
+      t.integer :position
       t.string :detail
 
     end
